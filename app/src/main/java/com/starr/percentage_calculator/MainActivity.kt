@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Log.i(TAG, "onProgressChanged $progress")
                 tvPercentageLabel.text = "$progress%"
+                computeTipAndTotal()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {}
