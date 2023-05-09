@@ -4,6 +4,8 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.TextView
@@ -41,5 +43,30 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
 
         })
+
+        etBaseAmount.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                Log.i(TAG, "afterTextChanged $s")
+                computeTipAndTotal()
+            }
+
+        })
+    }
+
+    private fun computeTipAndTotal() {
+        //1. Get the value of the base and tip percent
+        val baseAmount = etBaseAmount.text.toString().toDouble()
+        val tipPercent = seekBarTip.progress
+        //2. Compute the tip and total
+        val tipAmount = baseAmount * tipPercent / 100
+        val totalAmount  =  baseAmount + tipAmount
+        //3. Update the UI
+        tvTipAmount.text = tipAmount.toString()
+        tvTotalAmount.text = totalAmount.toString()
+
     }
 }
