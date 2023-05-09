@@ -7,11 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 <!--Views on the left side-->
+
     <TextView
         android:id="@+id/tvBaseLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         android:text="Base"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/tvPercentageLabel"
@@ -22,12 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="24%"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/seekBarTip"
         app:layout_constraintEnd_toEndOf="@+id/tvTipLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBaseLabel"
+        tools:text="24%" />
 
     <TextView
         android:id="@+id/tvTipLabel"
@@ -79,20 +80,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autoText="false"
-        android:text="19.96"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/tvTipLabel"
         app:layout_constraintStart_toStartOf="@+id/tvTotalAmount"
-        app:layout_constraintTop_toTopOf="@+id/tvTipLabel" />
+        app:layout_constraintTop_toTopOf="@+id/tvTipLabel"
+        tools:text="19.96" />
 
     <TextView
         android:id="@+id/tvTotalAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="103.11"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/tvTotalLabel"
         app:layout_constraintStart_toEndOf="@+id/tvTotalLabel"
-        app:layout_constraintTop_toTopOf="@+id/tvTotalLabel" />
+        app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
+        tools:text="103.11" />
 </androidx.constraintlayout.widget.ConstraintLayout>
